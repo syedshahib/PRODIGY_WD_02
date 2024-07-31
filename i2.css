@@ -1,0 +1,112 @@
+html {
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* New gradient */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: transparent;
+    margin: 0;
+}
+
+.stopwatch {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Light white with more opacity */
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Slightly darker border */
+    backdrop-filter: blur(8px); /* Less blur effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stopwatch:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+}
+
+#display {
+    font-size: 60px;
+    margin-bottom: 25px;
+    color: #2a5298; /* Darker blue for better readability */
+}
+
+.buttons button {
+    padding: 12px 25px;
+    margin: 8px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#startStopBtn {
+    background-color: #4caf50; /* Fresh green */
+    color: white;
+}
+
+#startStopBtn:hover {
+    background-color: #388e3c;
+    transform: translateY(-3px);
+}
+
+#resetBtn {
+    background-color: #f44336; /* Vibrant red */
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #c62828;
+    transform: translateY(-3px);
+}
+
+#lapBtn {
+    background-color: #2196f3; /* Bright blue */
+    color: white;
+}
+
+#lapBtn:hover {
+    background-color: #1976d2;
+    transform: translateY(-3px);
+}
+
+.laps-container {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Slightly darker border */
+    background: rgba(255, 255, 255, 0.8); /* Light white with more opacity */
+    backdrop-filter: blur(8px); /* Less blur effect */
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none; /* Initially hidden */
+}
+
+.laps-container.show {
+    display: block; /* Show when class 'show' is added */
+}
+
+.laps-container h2 {
+    margin-top: 0;
+    color: #2a5298; /* Darker blue for headings */
+}
+
+.lap {
+    font-size: 20px;
+    margin: 8px 0;
+    opacity: 0;
+    transform: translateX(-120%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lap.show {
+    opacity: 1;
+    transform: translateX(0);
+}
